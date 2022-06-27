@@ -1,14 +1,18 @@
 import styled from "styled-components";
 import { mobile } from "../responsive";
+import { Link } from "react-router-dom";
+import Navbar from "../components/Navbar";
+import Announcement from "../components/Announcement";
 
 const Container = styled.div`
+  position: absolute;
   width: 100vw;
   height: 100vh;
   background: linear-gradient(
       rgba(255, 255, 255, 0.5),
       rgba(255, 255, 255, 0.5)
     ),
-    url("https://images.pexels.com/photos/6984661/pexels-photo-6984661.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940")
+    url("https://leap.london/leap-content/uploads/2019/03/DURACELL-shoe-1024x576.jpg")
       center;
   background-size: cover;
   display: flex;
@@ -49,31 +53,40 @@ const Button = styled.button`
   width: 40%;
   border: none;
   padding: 15px 20px;
-  background-color: teal;
+  background-color: black;
   color: white;
   cursor: pointer;
 `;
 
 const Register = () => {
   return (
-    <Container>
-      <Wrapper>
-        <Title>CREATE AN ACCOUNT</Title>
-        <Form>
-          <Input placeholder="name" />
-          <Input placeholder="last name" />
-          <Input placeholder="username" />
-          <Input placeholder="email" />
-          <Input placeholder="password" />
-          <Input placeholder="confirm password" />
-          <Agreement>
-            By creating an account, I consent to the processing of my personal
-            data in accordance with the <b>PRIVACY POLICY</b>
-          </Agreement>
-          <Button>CREATE</Button>
-        </Form>
-      </Wrapper>
-    </Container>
+    <>
+      <Navbar />
+      <Announcement />
+      <Container>
+        <Wrapper>
+          <Title>CREATE AN ACCOUNT</Title>
+          <Form>
+            <Input placeholder="name" />
+            <Input placeholder="last name" />
+            <Input placeholder="username" />
+            <Input placeholder="email" />
+            <Input placeholder="password" />
+            <Input placeholder="confirm password" />
+            <Agreement>
+              By creating an account, I consent to the processing of my personal
+              data in accordance with the <b>PRIVACY POLICY</b>
+              <br />
+              <br />
+              <Link to="/login" style={{ marginLeft: "4%", cursor: "pointer" }}>
+                ALREADY HAVE ACCOUNT?
+              </Link>
+            </Agreement>
+            <Button>CREATE</Button>
+          </Form>
+        </Wrapper>
+      </Container>
+    </>
   );
 };
 

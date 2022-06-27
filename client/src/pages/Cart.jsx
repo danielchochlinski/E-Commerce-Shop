@@ -9,7 +9,8 @@ import StripeCheckout from "react-stripe-checkout";
 import { useState, useEffect } from "react";
 import { userRequest } from "../requestMethods";
 import { useHistory } from "react-router";
-import { addProduct, removeProduct } from "../redux/cartRedux";
+import { Link } from "react-router-dom";
+import { removeProduct } from "../redux/cartRedux";
 
 const KEY = process.env.REACT_APP_STRIPE;
 
@@ -164,9 +165,8 @@ const Cart = () => {
   const cart = useSelector((state) => state.cart);
   const [stripeToken, setStripeToken] = useState(null);
   const history = useHistory();
-    const [quantity, setQuantity] = useState(1);
-  const dispatch = useDispatch()
-
+  const [quantity, setQuantity] = useState(1);
+  const dispatch = useDispatch();
 
   const onToken = (token) => {
     setStripeToken(token);
@@ -185,9 +185,6 @@ const Cart = () => {
     stripeToken && makeRequest();
   }, [stripeToken, cart.total, history]);
 
-
-
-
   return (
     <Container>
       <Navbar />
@@ -195,12 +192,14 @@ const Cart = () => {
       <Wrapper>
         <Title>YOUR BAG</Title>
         <Top>
-          <TopButton>CONTINUE SHOPPING</TopButton>
+          <TopButton>
+            <Link to="/" />
+            CONTINUE SHOPPING
+          </TopButton>
           <TopTexts>
             <TopText>Shopping Bag(2)</TopText>
             <TopText>Your Wishlist (0)</TopText>
           </TopTexts>
-          <TopButton type="filled">CHECKOUT NOW</TopButton>
         </Top>
         <Bottom>
           <Info>
@@ -213,7 +212,7 @@ const Cart = () => {
                       <b>Product:</b> {product.title}
                     </ProductName>
                     <ProductId>
-                      <b>ID:</b> {product._id}
+                      <b>Description:</b> {product.description}
                     </ProductId>
                     <ProductColor color={product.color} />
                     <ProductSize>

@@ -75,7 +75,9 @@ const Navbar = () => {
       <Wrapper>
         <Left></Left>
         <Center>
-          <Logo>DCH SPORTS SHOP</Logo>
+          <Link to="/" style={{ textDecoration: "none", color: "black" }}>
+            <Logo>DCH SPORTS SHOP</Logo>
+          </Link>
         </Center>
         <Right>
           <Link

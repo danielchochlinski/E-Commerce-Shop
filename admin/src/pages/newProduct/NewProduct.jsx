@@ -96,6 +96,15 @@ export default function NewProduct() {
           />
         </div>
         <div className="addProductItem">
+          <label>Brand</label>
+          <input
+            name="brand"
+            type="text"
+            placeholder="description"
+            onChange={handleChange}
+          />
+        </div>
+        <div className="addProductItem">
           <label>Price</label>
           <input
             name="price"
@@ -112,6 +121,7 @@ export default function NewProduct() {
             onChange={handleCategories}
           />
         </div>
+
         <div className="addProductItem">
           <label>Stock</label>
           <select name="inStock">

@@ -43,7 +43,8 @@ const Circle = styled.div`
 `;
 
 const Image = styled.img`
-  height: 75%;
+  max-width: 90%;
+  max-height: 90%;
   z-index: 2;
 `;
 
@@ -73,7 +74,7 @@ const Product = ({ item }) => {
           <ShoppingCartIcon />
         </Icon>
         <Icon>
-      <Link to={`/product/${item._id}`}>
+          <Link to={`/product/${item._id}`}>
             <SearchIcon />
           </Link>
         </Icon>

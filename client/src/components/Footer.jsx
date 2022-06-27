@@ -7,6 +7,7 @@ import MapIcon from "@mui/icons-material/Map";
 import PhoneIcon from "@mui/icons-material/Phone";
 import EmailIcon from "@mui/icons-material/Email";
 import { mobile } from "../responsive";
+import { Link } from "react-router-dom";
 
 const Container = styled.div`
   display: flex;
@@ -93,13 +94,67 @@ const Footer = () => {
       <Center>
         <Title>Links</Title>
         <List>
-          <ListItem>Home</ListItem>
-          <ListItem>Cart</ListItem>
-          <ListItem>Man Fasion</ListItem>
-          <ListItem>Woman Fasion</ListItem>
-          <ListItem>Accesories</ListItem>
-          <ListItem>My Account</ListItem>
-          <ListItem>Order Tracking</ListItem>
+          <ListItem>
+            <Link style={{ textDecoration: "none", color: "black" }} to="/">
+              Home
+            </Link>
+          </ListItem>
+          <ListItem>
+            <Link
+              style={{ textDecoration: "none", color: "black" }}
+              to="/products/football"
+            >
+              Football
+            </Link>
+          </ListItem>
+          <ListItem>
+            <Link
+              style={{ textDecoration: "none", color: "black" }}
+              to="/products/women"
+            >
+              Women Shose
+            </Link>
+          </ListItem>
+          <ListItem>
+            <Link
+              style={{ textDecoration: "none", color: "black" }}
+              to="/products/men"
+            >
+              Men Shoes
+            </Link>
+          </ListItem>
+          <ListItem>
+            <Link
+              style={{ textDecoration: "none", color: "black" }}
+              to="/products/womenwear"
+            >
+              Women Wear
+            </Link>
+          </ListItem>
+          <ListItem>
+            <Link
+              style={{ textDecoration: "none", color: "black" }}
+              to="/products/menwear"
+            >
+              Men Wear
+            </Link>
+          </ListItem>
+          <ListItem>
+            <Link
+              style={{ textDecoration: "none", color: "black" }}
+              to="/login"
+            >
+              Login
+            </Link>
+          </ListItem>
+          <ListItem>
+            <Link
+              style={{ textDecoration: "none", color: "black" }}
+              to="/register"
+            >
+              Register
+            </Link>
+          </ListItem>
         </List>
       </Center>
       <Right>

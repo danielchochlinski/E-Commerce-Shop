@@ -54,9 +54,9 @@ const ProductList = () => {
       <FilteredContainer>
         <Filter>
           <FilteredText>flter</FilteredText>
-          <Select name="color" onChange={handleFilters}>
-            <Option disabled>Color</Option>
-            <Option value={["nike", "adidas"]}>All</Option>
+          <Select name="brand" onChange={handleFilters}>
+            <Option disabled>Brand</Option>
+            <Option>All</Option>
             <Option>nike</Option>
             <Option>adidas</Option>
             <Option>puma</Option>
